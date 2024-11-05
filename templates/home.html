@@ -1,0 +1,97 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Compass</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Course Compass</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#methodology">Methodology</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Course Recommender System</h1>
+            <p class="subtitle">Powered by AI and Machine Learning</p>
+            <div class="hero-buttons">
+                <a href="http://localhost:8501" class="btn primary"><i class="fas fa-robot"></i> Chat with AI Assistant</a>
+                <a href="{{ url_for('search') }}" class="btn secondary"><i class="fas fa-search"></i> Search Courses</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h2>About the Project</h2>
+            <p class="about-description">A hybrid recommendation system combining K-Means clustering with LLM-powered chatbot for personalized course recommendations across NPTEL, MIT OpenCourseWare, Coursera, and Udemy.</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>4</h3>
+                    <p>Learning Platforms</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-book"></i>
+                    <h3>30,000+</h3>
+                    <p>Courses Analyzed</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-Powered</h3>
+                    <p>Recommendations</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <h2>System Architecture</h2>
+            <div class="diagram-container">
+                <img src="{{ url_for('static', filename='dataflowdiagram.png') }}" alt="Data Flow Diagram" class="diagram">
+            </div>
+        </section>
+
+        <section id="methodology" class="section">
+            <h2>Our Methodology</h2>
+            <div class="methodology-grid">
+                <div class="method-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Collection</h3>
+                    <p>Aggregating course data from multiple platforms using web scraping</p>
+                </div>
+                <div class="method-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Processing</h3>
+                    <p>TF-IDF vectorization for feature extraction</p>
+                </div>
+                <div class="method-card">
+                    <i class="fas fa-cluster"></i>
+                    <h3>Clustering</h3>
+                    <p>K-Means clustering for course categorization</p>
+                </div>
+                <div class="method-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>LLM Integration</h3>
+                    <p>AI-powered chatbot for personalized recommendations</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Developed by Yash Singhal | Guided by Dr. Amita Goel</p>
+            <p>Maharaja Agrasen Institute of Technology, Delhi</p>
+        </div>
+    </footer>
+</body>
+</html>

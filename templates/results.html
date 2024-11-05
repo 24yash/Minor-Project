@@ -1,0 +1,60 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="results-page">
+    <div class="results-header">
+        <h1>Results for: "{{ query }}"</h1>
+        <div class="platform-nav">
+            <a href="#nptel">NPTEL</a>
+            <a href="#mit">MIT</a>
+            <a href="#udemy">Udemy</a>
+            <a href="#coursera">Coursera</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="nptel" class="results-section">
+            <div class="platform-header">
+                <i class="fas fa-graduation-cap"></i>
+                <h2>NPTEL Courses</h2>
+            </div>
+            {{ nptel_results.to_html(classes='results-table', escape=False) | safe }}
+        </section>
+
+        <section id="mit" class="results-section">
+            <div class="platform-header">
+                <i class="fas fa-university"></i>
+                <h2>MIT Courses</h2>
+            </div>
+            {{ mit_results.to_html(classes='results-table', escape=False) | safe }}
+        </section>
+
+        <section id="udemy" class="results-section">
+            <div class="platform-header">
+                <i class="fas fa-laptop-code"></i>
+                <h2>Udemy Courses</h2>
+            </div>
+            {{ udemy_results.to_html(classes='results-table', escape=False) | safe }}
+        </section>
+
+        <section id="coursera" class="results-section">
+            <div class="platform-header">
+                <i class="fas fa-globe"></i>
+                <h2>Coursera Courses</h2>
+            </div>
+            {{ coursera_results.to_html(classes='results-table', escape=False) | safe }}
+        </section>
+
+        <div class="action-buttons">
+            <a href="{{ url_for('search') }}" class="btn primary"><i class="fas fa-search"></i> New Search</a>
+            <a href="{{ url_for('home') }}" class="btn secondary"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
