@@ -89,9 +89,7 @@ def get_courses(user_query):
 
   1. Provide the EXACT and COMPLETE links as given in the input data. Do not modify, shorten, or simplify the links in any way. THIS IS IMPORTANT!
   2. Include all relevant information for each course: title, platform, instructor (if available), and the exact link. You may also tell why this course will be beneficial to what they want which is: "{user_query}".
-  3. Format the output properly for readability.
-  4. If a course doesn't have a link, mention that the link is not available.
-  5. If relevant courses are not available for a platform, mention that there are no relevant courses available for that platform.
+  3. If relevant courses are not available for a platform, mention that there are no relevant courses available for that platform.
 
   The courses are: {data}
 
